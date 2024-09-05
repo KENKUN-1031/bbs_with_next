@@ -1,4 +1,5 @@
 import { BBSDataType } from '@/app/types/types';
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -14,8 +15,20 @@ async function getDetailBBSData(id: number) {
 const BBSDetailPage = async ({params }: {params: { bbsId: number }}) => { //bbsIdはroutesの方のファイル名(bbsId)と合わせる
   const bbsDetailData = await getDetailBBSData(params.bbsId)
   console.log(bbsDetailData)
+  const {title, content, username} = bbsDetailData
   return (
-    <div>BBSDetailPage</div>
+    <div className='mx-auto max-w-4xl p-4'>
+      <div className='mb-8'>
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p className="text-gray-700">{username}</p>
+      </div>
+
+      <div className="mb-8">
+        <p className='text-gray-900'>{content}</p>
+      </div>
+
+      <Link href={"/"} className="bg-blue-500 font-bold py-2 px-4 rounded-md text-white">戻る</Link>
+    </div>
   )
 }
 
