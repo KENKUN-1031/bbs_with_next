@@ -6,8 +6,8 @@ async function getBBSAllData() {
     cache: "no-store",
   });
   const bbsAllData: BBSDataType[] = await response.json();
-  console.log("¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥")
-  console.log(bbsAllData)
+  // console.log("¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥")
+  // console.log(bbsAllData)
 
   return bbsAllData;
 }

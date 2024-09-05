@@ -7,12 +7,10 @@ interface BBSAllDataProps {
 }
 
 const BBSCardlist = ({ bbsAllData }: BBSAllDataProps) => {
-  console.log("^^^^^^^^^^^^^^^^^^^^^^^^")
-  console.log(bbsAllData)
   return (
     <div className="grid lg:grid-cols-3 px-4 py-4 gap-4">
       {bbsAllData.map((bbsData: BBSDataType) => (
-        <BBSCard key={bbsData.id} />
+        <BBSCard key={bbsData.id} bbsData={bbsData}/>
       ))}
     </div>
   );
